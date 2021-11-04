@@ -1,0 +1,5 @@
+select
+%s
+from
+%s.%s
+lateral view hxr_edb.explode_json_array(get_json_object(`line`, '$.%s')) table_tmp as item;
