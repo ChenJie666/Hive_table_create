@@ -1,0 +1,99 @@
+cmodifier (U871)  修改人  nvarchar 20  True
+  cmobilephone  收货联系人手机  nvarchar 50  True
+  cinvoicecompany (U8111)  开票单位编码  nvarchar 20  True
+  fbooknatsum (U8100)  定金本币金额  money 8  True
+  cEBBuyer  买家留言  nvarchar 2000  True
+  optnty_name (U8110)  销售机会主题  nvarchar 255  True
+  ccontactname  收货联系人  nvarchar 255  True
+  dverifysystime (U871)  审核时间  datetime 8  True
+  icreditstate (U870)  信用审核状态  varchar 20  True
+  outid (U890)  outid  uniqueidentifier 16  True
+  bcashsale (U890)  现款结算  bit 1  True
+  ccuspersoncode (U8100)  联系人编码  nvarchar 30  True
+  ioppid (U8110)  商机编码  int 4  True
+  cEBTrnumber  交易编号  nvarchar 80  True
+  dverifydate (U871)  审核日期  datetime 8  True
+  ccusperson (U871)  客户联系人  nvarchar 100  True
+  cAttachment (U8111)  附件  nvarchar 255  True
+  iswfcontrolled (U870)  是否控制工作流  tinyint 1  True
+  dChangeVerifyDate (U890)  变更审批日期  datetime 8  True
+  cgatheringplan (U870)  收付款协议  nvarchar 20  True
+  cMainPersonCode (U8110)  相关员工编码  nvarchar 255  True
+  ireturncount (U870)  打回次数  tinyint 1  True
+  cCrmPersonName (U8110)  联系人  nvarchar 255  True
+  fbooksum (U8100)  定金原币金额  money 8  True
+  cCrmPersonCode (U8110)  联系人编码  nvarchar 255  True
+  cEBBuyerNote  卖家备注  nvarchar 4000  True
+  iflowid (U890)  流程id  int 4  True
+  cEBcity  收货人市  nvarchar 20  True
+  dChangeVerifyTime (U890)  变更审批时间  datetime 8  True
+  cgathingcode (U890)  收款单号  nvarchar 255  True
+  caddcode (U870)  发货地址编码  nvarchar 30  True
+  csvouchtype (U8110)  电商来源标识  nvarchar 10  True
+  fgbooksum (U8100)  定金累计实收原币金额  money 8  True
+  cSysBarCode (U8110)  表头单据条码  nvarchar 60  True
+  dcreatesystime (U871)  制单时间  datetime 8  True
+  dclosesystime (U8100)  关闭时间  datetime 8  True
+  contract_status (U8110)  (turbocrm用)  smallint 2  True
+  csscode (U8111)  结算方式编码  nvarchar 3  True
+  cEBdistrict  收货人区  nvarchar 60  True
+  dmoddate (U871)  修改日期  datetime 8  True
+  bmustbook (U8100)  必有定金  bit 1  True
+  iPrintCount (U8100)  打印次数  float 8  True
+  cCurrentAuditor (U8110)  当前审批人  nvarchar 200  True
+  cEBprovince  收货人省  nvarchar 20  True
+  cInvoiceCusName  发票抬头  nvarchar 255  True
+  cChangeVerifier (U890)  变更审批人  nvarchar 20  True
+  dmodifysystime (U871)  修改时间  datetime 8  True
+  fbookratio (U8100)  定金比例(%)  float 8  True
+  dclosedate (U8100)  关闭日期  datetime 8  True
+  iverifystate (U870)  审核状态  int 4  True
+  fgbooknatsum (U8100)  定金累计实收本币金额  money 8  True
+  cSTCode (U861)  销售类型编码  nvarchar 2  False
+  dDate (U861)  单据日期  datetime 8  False
+  cSOCode (U861)  销售订单号  nvarchar 30  True
+  cCusCode (U861)  客户编码  nvarchar 20  True
+  cDepCode (U861)  部门编码  nvarchar 12  False
+  cPersonCode (U861)  业务员编码  nvarchar 20  True
+  cSCCode (U861)  发运方式编码  nvarchar 2  True
+  cCusOAddress (U861)  发货地址  nvarchar 200  True
+  cPayCode (U861)  付款条件编码  nvarchar 3  True
+  cexch_name (U861)  币种名称  nvarchar 8  False
+  iExchRate (U861)  汇率  float 8  True
+  iTaxRate (U861)  表头税率  float 8  True
+  iMoney (U861)  定金  money 8  True
+  cMemo (U861)  备注  nvarchar 60  True
+  iStatus (U861)  状态（0-未审核；1-已审核）  tinyint 1  True
+  cMaker (U861)  制单人  nvarchar 20  True
+  cVerifier (U861)  审核人  nvarchar 20  True
+  cCloser (U861)  关闭人  nvarchar 20  True
+  bDisFlag (U861)  是否整单打折  bit 1  True
+  cDefine1 (U861)  自定义项1  nvarchar 20  True
+  cDefine2 (U861)  自定义项2  nvarchar 20  True
+  cDefine3 (U861)  自定义项3  nvarchar 20  True
+  cDefine4 (U861)  自定义项4  datetime 8  True
+  cDefine5 (U861)  自定义项5  int 4  True
+  cDefine6 (U861)  自定义项6  datetime 8  True
+  cDefine7 (U861)  自定义项7  float 8  True
+  cDefine8 (U861)  自定义项8  nvarchar 4  True
+  cDefine9 (U861)  自定义项9  nvarchar 8  True
+  cDefine10 (U861)  自定义项10  nvarchar 60  True
+  bReturnFlag (U861)  退货标志（1-退货；0-正常）  bit 1  False
+  cCusName (U861)  客户名称  nvarchar 120  True
+  bOrder (U861)  是否生成物料需求计划  bit 1  True
+  ID (U861)  销售订单主表标识  int 4  False
+  iVTid (U861)  单据模版号  int 4  False
+  ufts (U861)  时间戳  timestamp 8  True
+  cChanger (U861)  变更人  nvarchar 20  True
+  cBusType (U861)  业务类型  nvarchar 8  False
+  cCreChpName (U861)  信用审核人  nvarchar 20  True
+  cDefine11 (U861)  自定义项11  nvarchar 120  True
+  cDefine12 (U861)  自定义项12  nvarchar 120  True
+  cDefine13 (U861)  自定义项13  nvarchar 120  True
+  cDefine14 (U861)  自定义项14  nvarchar 120  True
+  cDefine15 (U861)  自定义项15  int 4  True
+  cDefine16 (U861)  自定义项16  float 8  True
+  coppcode (U861)  商机编号  nvarchar 30  True
+  cLocker (U861)  锁定人  nvarchar 20  True
+  dPreMoDateBT (U861)  预完工日期  datetime 8  True
+  dPreDateBT (U861)  预发货日期  datetime 8  True

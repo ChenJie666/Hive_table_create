@@ -3,8 +3,15 @@ package com.cj.hive;
 import com.cj.hive.entity.Tuple;
 import com.cj.hive.util.FileUtil;
 import com.cj.hive.util.HiveUtil;
+import org.apache.tools.ant.util.ReaderInputStream;
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
@@ -158,5 +165,162 @@ public class ParseJsonTableTest {
 //        System.out.println("new: " + newHash);
 //
 //    }
+
+    @Test
+    public void transferFormat1() {
+        String transfer_format = FileUtil.readFileFromLocation("transfer_format1");
+
+        String s1 = transfer_format.replaceAll("</.*>", "',");
+        String s2 = s1.replaceAll("<(.*)>", "$1 string COMMENT '");
+        System.out.println(s2);
+    }
+
+    @Test
+    public void transferFormat2() throws IOException {
+        String transfer_format = FileUtil.readFileFromLocation("transfer_format22");
+        String s1 = transfer_format.replaceAll("(\\(.*\\))", "");
+        ByteArrayInputStream bais = new ByteArrayInputStream(s1.getBytes());
+        InputStreamReader isr = new InputStreamReader(bais);
+        BufferedReader br = new BufferedReader(isr);
+        String line;
+        StringBuffer sb = new StringBuffer();
+        while((line = br.readLine())!= null){
+            String newLine = line.trim().replaceAll("[\\s]+", " ");
+            String[] split = newLine.split(" ");
+            String columnName = split[0];
+            String comment = split[1];
+            sb.append(String.format("%s string COMMENT '%s',\n",columnName,comment));
+        }
+        System.out.println(sb);
+    }
+
+    @Test
+    public void test() {
+        String transfer_format = FileUtil.readFileFromLocation("test");
+        String s1 = transfer_format.replaceAll("</.*>", "',");
+        String s2 = s1.replaceAll("<(.*)>(.*)", "$1,");
+        System.out.println(s2);
+    }
+
+    @Test
+    public void test2() throws IOException {
+        String test1 = FileUtil.readFileFromLocation("test1");
+        String s2 = test1.replaceAll("(.*),", "$1");
+        BufferedReader br2 = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(s2.getBytes())));
+        String data2;
+        ArrayList<String> strings = new ArrayList<>();
+        while ((data2 = br2.readLine()) != null){
+            strings.add(data2);
+        }
+        System.out.println(strings);
+
+        String test = FileUtil.readFileFromLocation("test");
+        String s1 = test.replaceAll("</.*>", "',");
+        String s11 = s1.replaceAll("<(.*)>", "$1 string COMMENT '");
+        BufferedReader br1 = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(s11.getBytes())));
+        String data1;
+        boolean flag;
+        StringBuffer sb = new StringBuffer();
+        while ((data1 = br1.readLine()) != null){
+            flag = false;
+            for (String string : strings) {
+                if (data1.split(" ")[0].equals(string)) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.println(data1);
+                sb.append(data1).append('\n');
+            }
+        }
+
+        System.out.println(sb);
+    }
+
+    @Test
+    public void customer() throws IOException {
+        String customer_comment = FileUtil.readFileFromLocation("customer_comment");
+        String customer_comment1 = customer_comment.replaceAll("\\(.*\\)", "");
+        String customer_comment2 = customer_comment1.replaceAll(" +", " ");
+        BufferedReader commentBR = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(customer_comment2.getBytes())));
+        HashMap<String, String> map = new HashMap<>();
+        String commentData;
+        while ((commentData = commentBR.readLine()) != null) {
+            String column = commentData.trim().split(" ")[0];
+            String comment = commentData.trim().split(" ")[1];
+            map.put(column, comment);
+        }
+        System.out.println("size:" + map.size());
+//        System.out.println(map.entrySet().iterator().next());
+
+        String customer_columns = FileUtil.readFileFromLocation("customer_columns");
+        String customer_columns1 = customer_columns.replaceAll(" +", " ");
+        BufferedReader columnBR = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(customer_columns1.getBytes())));
+        String columnData;
+        StringBuffer sb = new StringBuffer();
+        boolean flag;
+        while ((columnData = columnBR.readLine()) != null) {
+            flag = false;
+            String column = columnData.trim().split(" ")[0];
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+//                System.out.println("column:" + column + "  key:" +entry.getKey() + "  value:" + entry.getValue());
+                if (column.equalsIgnoreCase(entry.getKey())) {
+                    String comment = entry.getValue();
+                    String resultColumn = columnData.replaceAll(",", " COMMENT '" + comment + "',");
+                    sb.append(resultColumn).append('\n');
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                sb.append(columnData).append('\n');
+            }
+        }
+        System.out.println(sb);
+    }
+
+    @Test
+    public void edb() throws IOException {
+        String edb_comment = FileUtil.readFileFromLocation("edb_comment");
+        String edb_comment1 = edb_comment.replaceAll("</.*>", "");
+        String edb_comment2 = edb_comment1.replaceAll("<(.*)>", "$1 ");
+        System.out.println(edb_comment2);
+        BufferedReader commentBR = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(edb_comment2.getBytes())));
+        HashMap<String, String> map = new HashMap<>();
+        String commentData;
+        while ((commentData = commentBR.readLine()) != null) {
+            String column = commentData.trim().split(" ")[0];
+            String comment = commentData.trim().split(" ")[1];
+            map.put(column, comment);
+        }
+        System.out.println("size:" + map.size());
+
+        String edb_columns = FileUtil.readFileFromLocation("edb_columns");
+        String edb_columns1 = edb_columns.replaceAll(" +", " ");
+        BufferedReader columnBR = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(edb_columns1.getBytes())));
+        String columnData;
+        StringBuffer sb = new StringBuffer();
+        boolean flag;
+        while ((columnData = columnBR.readLine()) != null) {
+            flag = false;
+            String column = columnData.trim().split(" ")[0];
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+//                System.out.println("column:" + column + "  key:" +entry.getKey() + "  value:" + entry.getValue());
+                if (column.equalsIgnoreCase(entry.getKey())) {
+                    String comment = entry.getValue();
+                    String resultColumn = columnData.replaceAll(",", " COMMENT '" + comment + "',");
+                    sb.append(resultColumn).append('\n');
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                sb.append(columnData).append('\n');
+            }
+        }
+        System.out.println(sb);
+
+    }
 
 }

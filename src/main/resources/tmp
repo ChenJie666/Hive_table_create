@@ -1,0 +1,361 @@
+storage_id 仓库编号
+tid 订单编号
+transaction_id 交易编号
+customer_id 客户编号
+distributor_id 分销商编号
+shop_name 店铺名称
+out_tid 外部平台单号
+out_pay_tid 外部平台付款单号
+voucher_id 凭证单号
+shopid 店铺代码
+serial_num 流水号
+order_channel 订单渠道
+order_from 订单来源
+buyer_id 买家ID
+buyer_name 买家姓名
+type 订单类型
+status 处理状态
+abnormal_status 异常状态
+merge_status 合并状态
+receiver_name 收货人
+receiver_mobile 收货手机
+phone 电话
+province 省
+city 市
+district 区
+address 地址
+post 邮编
+email 电子邮件
+is_bill 是否开发票
+invoice_name 发票名称
+invoice_situation 开票情况
+invoice_title 发票抬头
+invoice_type 发票类型
+invoice_content 开票内容
+pro_totalfee 产品总金额
+order_totalfee 订单总金额
+reference_price_paid 实收参考价
+invoice_fee 发票金额
+cod_fee 货到付款金额
+other_fee 其他费用
+refund_totalfee 退款总金额
+discount_fee 优惠金额
+platform_preferential 平台承担优惠合计
+discount 折扣
+channel_disfee 渠道优惠金额
+merchant_disfee 商家优惠金额
+order_disfee 整单优惠
+commission_fee 佣金
+is_cod 是否货到付款
+point_pay 是否积分换购
+cost_point 消耗积分
+point 获得积分
+superior_point 上级积分
+royalty_fee 提成金额
+external_point 外部积分
+tradegifadd 赠品添加
+express_no 快递单号
+express 快递公司
+express_coding EDB快递代码
+online_express 线上快递公司
+sending_type 配送方式
+real_income_freight 实收运费
+real_pay_freight 实付运费
+gross_weight 毛重
+gross_weight_freight 毛重运费
+net_weight_freight 净重运费
+freight_explain 运费说明
+total_weight 总重量
+tid_net_weight 订单净重
+tid_time 订货时间
+pay_time 付款时间
+get_time 获取时间
+order_creater 下单员
+business_man 业务员
+payment_received_operator 到款员
+payment_received_time 到款时间
+review_orders_operator 审单员
+review_orders_time 审单时间
+finance_review_operator 财务审核人
+finance_review_time 财务审核时间
+advance_printer 预打印员
+printer 打印员
+print_time 打印时间
+is_print 是否打印,0或空表示未打印,1表示已打印
+adv_distributer 预配货员
+adv_distribut_time 预配货时间
+distributer 配货员
+distribut_time 配货时间
+is_inspection 是否验货
+inspecter 验货员
+inspect_time 验货时间
+cancel_operator 取消员
+cancel_time 取消时间
+revoke_cancel_er 反取消员
+revoke_cancel_time 反取消时间
+packager 打包员
+pack_time 打包时间
+weigh_operator 称重员
+weigh_time 称重时间
+book_delivery_time 预计发货时间
+delivery_operator 发货员
+delivery_time 发货时间
+locker 锁定员
+lock_time 锁定时间
+book_file_time 预计归档时间
+file_operator 归档员
+file_time 归档时间
+finish_time 完成时间
+modity_time 订单修改时间
+is_promotion 促销标记
+promotion_plan 满足的促销方案
+out_promotion_detail 外部平台促销详情
+good_receive_time 到货日期
+receive_time 生成应收时间
+verificaty_time 核销日期
+enable_inte_sto_time 启用智能仓库时间
+enable_inte_delivery_time 启用智能快递时间
+alipay_id 支付宝账户
+alipay_status 支付宝状态
+pay_mothed 支付方式
+pay_status 付款状态
+platform_status 外部平台状态
+rate 汇率
+currency 币种
+delivery_status 发货状态
+buyer_message 买家留言
+service_remarks 客服备注
+inner_lable 内部便签
+distributor_mark 分销商便签
+system_remarks 系统备注
+other_remarks 其他备注
+message 短信通知
+message_time 短信发送时间
+is_stock 是否缺货
+related_orders 相关订单
+related_orders_type 相关订单类型
+import_mark 导入标记:不导入,未导入,已处理,已导入,已取消
+three_codes 三段码
+distributing_centre_name 集散地名称
+gathering_ground 集包地
+send_site_name 发件网点名称
+delivery_name 第三方快递名称
+is_new_customer 是否新客户
+distributor_level 分销商等级
+cod_service_fee 货到付款服务费
+express_col_fee 快递代收金额
+product_num 产品数量
+sku 产品条形码
+item_num 单品条数
+single_num 单品数量
+flag_color 旗帜颜色
+is_flag 是否插旗
+taobao_delivery_order_status 淘宝快递订单状态
+taobao_delivery_status 淘宝快递状态
+taobao_delivery_method 淘宝快递方式
+order_process_time 处理订单需要的时间戳
+is_break 是否中断
+breaker 中断员
+break_time 中断时间
+break_explain 中断说明
+plat_send_status 平台发货状态
+plat_type 平台类型
+is_adv_sale 是否预售
+provinc_code 省编码
+city_code 市编码
+area_code 区编码
+express_code EDB快递编号(ID)
+last_returned_time 最后一次退货时间
+last_refund_time 最后一次退款时间
+deliver_centre 配送中心名称
+deliver_station 配送站点名称
+is_pre_delivery_notice 是否送货前通知
+jd_delivery_time 送货时间
+Sorting_code 分拣代码
+cod_settlement_vouchernumber 货到付款结算凭证号
+size:175
+ order_totalfee string COMMENT '订单总金额',
+ exception string,
+ payment_received_time string COMMENT '到款时间',
+ is_except string,
+ sorting_code string COMMENT '分拣代码',
+ buyer_name string COMMENT '买家姓名',
+ discount string COMMENT '折扣',
+ flag_color string COMMENT '旗帜颜色',
+ express_no string COMMENT '快递单号',
+ type string COMMENT '订单类型',
+ net_weight_freight string COMMENT '净重运费',
+ file_operator string COMMENT '归档员',
+ out_tid string COMMENT '外部平台单号',
+ province string COMMENT '省',
+ cod_settlement_vouchernumber string COMMENT '货到付款结算凭证号',
+ good_receive_time string COMMENT '到货日期',
+ weigh_operator string COMMENT '称重员',
+ book_delivery_time string COMMENT '预计发货时间',
+ real_pay_freight string COMMENT '实付运费',
+ three_codes string COMMENT '三段码',
+ express_coding string COMMENT 'EDB快递代码',
+ is_print string COMMENT '是否打印,0或空表示未打印,1表示已打印',
+ sku string COMMENT '产品条形码',
+ cod_fee string COMMENT '货到付款金额',
+ transaction_id string COMMENT '交易编号',
+ cancel_time string COMMENT '取消时间',
+ buyer_message string COMMENT '买家留言',
+ destcode string,
+ printer string COMMENT '打印员',
+ product_num string COMMENT '产品数量',
+ packager string COMMENT '打包员',
+ pro_totalfee string COMMENT '产品总金额',
+ is_pre_delivery_notice string COMMENT '是否送货前通知',
+ sending_type string COMMENT '配送方式',
+ phone string COMMENT '电话',
+ distributor_id string COMMENT '分销商编号',
+ promotion_info string,
+ alipay_id string COMMENT '支付宝账户',
+ distributer string COMMENT '配货员',
+ file_time string COMMENT '归档时间',
+ point_pay string COMMENT '是否积分换购',
+ distributor_mark string COMMENT '分销商便签',
+ status string COMMENT '处理状态',
+ gross_weight_freight string COMMENT '毛重运费',
+ review_orders_operator string COMMENT '审单员',
+ city string COMMENT '市',
+ delivery_name string COMMENT '第三方快递名称',
+ related_orders_type string COMMENT '相关订单类型',
+ city_code string COMMENT '市编码',
+ inspect_time string COMMENT '验货时间',
+ order_process_time string COMMENT '处理订单需要的时间戳',
+ distribut_time string COMMENT '配货时间',
+ is_cod string COMMENT '是否货到付款',
+ modity_time string COMMENT '订单修改时间',
+ discount_fee string COMMENT '优惠金额',
+ message_time string COMMENT '短信发送时间',
+ invoice_content string COMMENT '开票内容',
+ receiver_name string COMMENT '收货人',
+ print_time string COMMENT '打印时间',
+ taobao_delivery_order_status string COMMENT '淘宝快递订单状态',
+ currency string COMMENT '币种',
+ system_remarks string COMMENT '系统备注',
+ order_channel string COMMENT '订单渠道',
+ tid_net_weight string COMMENT '订单净重',
+ superior_point string COMMENT '上级积分',
+ email string COMMENT '电子邮件',
+ invoice_situation string COMMENT '开票情况',
+ pack_time string COMMENT '打包时间',
+ cancel_operator string COMMENT '取消员',
+ address string COMMENT '地址',
+ deliver_centre string COMMENT '配送中心名称',
+ enable_inte_sto_time string COMMENT '启用智能仓库时间',
+ taobao_delivery_status string COMMENT '淘宝快递状态',
+ abnormal_status string COMMENT '异常状态',
+ pay_mothed string COMMENT '支付方式',
+ receiver_mobile string COMMENT '收货手机',
+ item_num string COMMENT '单品条数',
+ service_remarks string COMMENT '客服备注',
+ express_col_fee string COMMENT '快递代收金额',
+ single_num string COMMENT '单品数量',
+ is_flag string COMMENT '是否插旗',
+ customer_id string COMMENT '客户编号',
+ platform_status string COMMENT '外部平台状态',
+ updatetime string,
+ is_inspection string COMMENT '是否验货',
+ delivery_status string COMMENT '发货状态',
+ plat_send_status string COMMENT '平台发货状态',
+ ts string,
+ provinc_code string COMMENT '省编码',
+ other_remarks string COMMENT '其他备注',
+ enable_inte_delivery_time string COMMENT '启用智能快递时间',
+ adv_distributer string COMMENT '预配货员',
+ breaker string COMMENT '中断员',
+ cod_service_fee string COMMENT '货到付款服务费',
+ delivery_operator string COMMENT '发货员',
+ out_promotion_detail string COMMENT '外部平台促销详情',
+ express string COMMENT '快递公司',
+ delivery_time string COMMENT '发货时间',
+ buyer_id string COMMENT '买家ID',
+ tid string COMMENT '订单编号',
+ invoice_name string COMMENT '发票名称',
+ locker string COMMENT '锁定员',
+ last_refund_time string COMMENT '最后一次退款时间',
+ dt string,
+ express_code string COMMENT 'EDB快递编号(ID)',
+ post string COMMENT '邮编',
+ finance_review_operator string COMMENT '财务审核人',
+ order_creater string COMMENT '下单员',
+ total_num string,
+ cost_point string COMMENT '消耗积分',
+ origincode string,
+ adv_distribut_time string COMMENT '预配货时间',
+ gross_weight string COMMENT '毛重',
+ commission_fee string COMMENT '佣金',
+ big_marker string,
+ resultnum string,
+ taobao_delivery_method string COMMENT '淘宝快递方式',
+ area_code string COMMENT '区编码',
+ alipay_status string COMMENT '支付宝状态',
+ receive_time string COMMENT '生成应收时间',
+ deliver_station string COMMENT '配送站点名称',
+ shop_name string COMMENT '店铺名称',
+ import_mark string COMMENT '导入标记:不导入,未导入,已处理,已导入,已取消',
+ revoke_cancel_er string COMMENT '反取消员',
+ is_stock string COMMENT '是否缺货',
+ advance_printer string COMMENT '预打印员',
+ finish_time string COMMENT '完成时间',
+ order_disfee string COMMENT '整单优惠',
+ pay_time string COMMENT '付款时间',
+ review_orders_time string COMMENT '审单时间',
+ platform_preferential string COMMENT '平台承担优惠合计',
+ business_man string COMMENT '业务员',
+ promotion_plan string COMMENT '满足的促销方案',
+ external_point string COMMENT '外部积分',
+ payment_received_operator string COMMENT '到款员',
+ district string COMMENT '区',
+ merchant_disfee string COMMENT '商家优惠金额',
+ weigh_time string COMMENT '称重时间',
+ shopid string COMMENT '店铺代码',
+ last_returned_time string COMMENT '最后一次退货时间',
+ break_time string COMMENT '中断时间',
+ inner_lable string COMMENT '内部便签',
+ break_explain string COMMENT '中断说明',
+ plat_type string COMMENT '平台类型',
+ invoice_title string COMMENT '发票抬头',
+ get_time string COMMENT '获取时间',
+ channel_disfee string COMMENT '渠道优惠金额',
+ revoke_cancel_time string COMMENT '反取消时间',
+ online_express string COMMENT '线上快递公司',
+ point string COMMENT '获得积分',
+ total_weight string COMMENT '总重量',
+ royalty_fee string COMMENT '提成金额',
+ maxrowver string,
+ pay_status string COMMENT '付款状态',
+ is_break string COMMENT '是否中断',
+ real_income_freight string COMMENT '实收运费',
+ rate string COMMENT '汇率',
+ storage_id string COMMENT '仓库编号',
+ distributor_level string COMMENT '分销商等级',
+ invoice_fee string COMMENT '发票金额',
+ freight_explain string COMMENT '运费说明',
+ invoice_type string COMMENT '发票类型',
+ finance_review_time string COMMENT '财务审核时间',
+ inspecter string COMMENT '验货员',
+ reference_price_paid string COMMENT '实收参考价',
+ other_fee string COMMENT '其他费用',
+ related_orders string COMMENT '相关订单',
+ out_pay_tid string COMMENT '外部平台付款单号',
+ refund_totalfee string COMMENT '退款总金额',
+ is_bill string COMMENT '是否开发票',
+ is_new_customer string COMMENT '是否新客户',
+ message string COMMENT '短信通知',
+ serial_num string COMMENT '流水号',
+ jd_delivery_time string COMMENT '送货时间',
+ lock_time string COMMENT '锁定时间',
+ tid_time string COMMENT '订货时间',
+ order_from string COMMENT '订单来源',
+ is_adv_sale string COMMENT '是否预售',
+ merge_status string COMMENT '合并状态',
+ is_promotion string COMMENT '促销标记',
+ voucher_id string COMMENT '凭证单号',
+ book_file_time string COMMENT '预计归档时间',
+ distributing_centre_name string COMMENT '集散地名称',
+ send_site_name string COMMENT '发件网点名称',
+ verificaty_time string COMMENT '核销日期',
